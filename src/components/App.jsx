@@ -1,10 +1,10 @@
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { Spinner } from 'components/Spinner/Spinner';
+// import { Spinner } from 'components/Spinner/Spinner';
 import { refreshUser } from '../redux/auth/operation';
 import { useAuth } from './hooks/useAuth';
 
@@ -22,7 +22,8 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Spinner />
+    // <Spinner />
+    <b>Refreshing user...</b>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -50,7 +51,7 @@ export const App = () => {
           }
         />
       </Route>
-      <Route path="*" element={<Navigate to="/" replace={<HomePage />} />} />
+      {/* <Route path="*" element={<Navigate to="/" replace={<HomePage />} />} /> */}
     </Routes>
   );
 };

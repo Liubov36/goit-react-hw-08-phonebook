@@ -18,10 +18,10 @@ export const register = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/signup', credential);
       token.set(data.token);
-    //   console.log(token);
+      console.log(token);
       return data;
     } catch (e) {
-    //   console.log(e.message);
+      console.log(e.message);
       return thunkAPI.rejectWithValue('User creation error');
     }
   }
@@ -35,7 +35,7 @@ export const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (e) {
-    //   console.log(e.message);
+      console.log(e.message);
       return thunkAPI.rejectWithValue('Login error');
     }
   }
@@ -64,6 +64,8 @@ export const refreshUser = createAsyncThunk(
       console.log('There is no token, return from fetchCurrentUser');
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
+    
+    token.set(persistedToken);
 
     try {
       token.set(persistedToken);

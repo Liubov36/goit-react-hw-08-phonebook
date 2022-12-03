@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { ErrorMessage } from 'formik';
+// import { ErrorMessage } from 'formik';
 
-export const Wrapper = styled.nav`
+export const Wrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -70,19 +70,19 @@ export const Button = styled.button`
   }
 `;
 
-export const Error = styled.div`
-  text-align: center;
-  color: red;
-  margin-top: 15px;
-  font-weight: 500;
-  font-size: 20px;
-`;
+// export const Error = styled.div`
+//   text-align: center;
+//   color: red;
+//   margin-top: 15px;
+//   font-weight: 500;
+//   font-size: 20px;
+// `;
 
-export const InputError = styled(ErrorMessage)`
-  width: 300px;
-  text-align: center;
-  color: red;
-  margin-bottom: 15px;
-  font-weight: 500;
-  font-size: 16px;
-`;
+// export const InputError = styled(ErrorMessage)`
+//   width: 300px;
+//   text-align: center;
+//   color: red;
+//   margin-bottom: 15px;
+//   font-weight: 500;
+//   font-size: 16px;
+// `;
