@@ -21,7 +21,8 @@ export const register = createAsyncThunk(
       console.log(token);
       return data;
     } catch (e) {
-      console.log(e.message);
+    //   console.log(e.message);
+      alert('User creation error');
       return thunkAPI.rejectWithValue('User creation error');
     }
   }
@@ -35,7 +36,9 @@ export const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (e) {
-      console.log(e.message);
+    //   console.log(e.message);
+    //   console.log(alert);
+    alert('Login error');
       return thunkAPI.rejectWithValue('Login error');
     }
   }
@@ -62,9 +65,10 @@ export const refreshUser = createAsyncThunk(
 
     if (persistedToken === null) {
       console.log('There is no token, return from fetchCurrentUser');
+    alert('Unable to fetch user');
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-    
+
     token.set(persistedToken);
 
     try {
